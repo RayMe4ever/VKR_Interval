@@ -1,0 +1,15 @@
+frequency = zeros((length(mesh)-1),1);
+for i=1:(length(array))
+    for k=1:(length(mesh)-1)
+        if (array{i}(1))<=(mesh(k)+(mesh(k+1)-mesh(k))/2) && (mesh(k)+(mesh(k+1)-mesh(k))/2)<=array{i}(2)
+            frequency(k)=frequency(k)+1;
+        end
+    end
+end
+
+subplot(1,2,2);
+
+for i=1:(length(mesh))
+    err=(array{i}(2)-array{i}(1))/2;
+    errorbar(array{i}(1)+((array{i}(2)-array{i}(1))/2),i,err,'horizontal','black','LineWidth',2);hold on;
+end

@@ -32,6 +32,7 @@ for i=1:(length(array))
 end
 mesh=sort(mesh);
 % Изображение элементарных интервалов
+subplot(2,1,1);
 for i=1:(length(mesh)-1)
     err=(mesh(i+1)-mesh(i))/2;
     errorbar(mesh(i)+((mesh(i+1)-(mesh(i)))/2),0,err,'horizontal');hold on;

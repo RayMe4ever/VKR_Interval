@@ -8,9 +8,8 @@ for i=1:(length(array))
 end
 
 subplot(2,1,2);
-xlim([mesh(1) mesh(length(mesh))]);hold on;
-ylim([0 max(frequency)+1]);hold on;
 for i=1:(length(mesh)-1)
     err=(mesh(i+1)-mesh(i))/2;
     errorbar(mesh(i)+((mesh(i+1)-(mesh(i)))/2),frequency(i),err,'horizontal','black','LineWidth',3);hold on;
 end
+axis([mesh(1) mesh(length(mesh)) 0 (max(frequency)+1)]);

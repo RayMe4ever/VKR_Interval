@@ -46,4 +46,5 @@ for i=1:(length(array))
     err=(array{i}(2)-array{i}(1))/2;
     errorbar(array{i}(1)+((array{i}(2)-array{i}(1))/2),i,err,'horizontal','black','LineWidth',2);hold on;
 end
+axis([mesh(1) mesh(length(mesh)) 0 (size(array,1)+1)]);
 
